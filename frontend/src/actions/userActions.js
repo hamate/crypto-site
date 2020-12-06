@@ -7,3 +7,8 @@ export const setUserAsyncAction = () => (async (dispatch) => {
   const results = await fetchDataGeneral(endpoint, method);
   return dispatch(setUserAction(results));
 });
+
+export const setUserNameAction = () => {
+  const userName = localStorage.getItem('userName');
+  return setUserAction({userName});
+};

@@ -19,7 +19,7 @@ export const userRepo = {
     }
   },
   async getUser(username) {
-    const sql = `SELECT users.id, password FROM users
+    const sql = `SELECT userid, password FROM users
       WHERE username = ?;`;
     try {
       return await db.query(sql, username);

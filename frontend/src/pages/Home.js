@@ -57,7 +57,7 @@ function Home() {
           Welcome to the crypto-site!
         </h1>
         <h2 className="welcome-text">
-          Please Sign In or Register to see the products!
+          Please Sign In or Register!
         </h2>
         <Button
           type="submit"

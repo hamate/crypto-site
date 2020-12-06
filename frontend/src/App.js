@@ -12,6 +12,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import LoggedInMain from './pages/LoggedInMain';
+import { setUserNameAction } from './actions/userActions';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +27,7 @@ function App() {
   };
   useEffect(() => {
     dispatch(setSessionAction());
+    dispatch(setUserNameAction())
   }, [dispatch]);
 
   function loggingOut() {

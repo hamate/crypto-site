@@ -19,6 +19,7 @@ import {
   loginSuccessAction,
 } from '../actions/sessionAction';
 import { setLoginError } from '../actions/errorActions';
+import { setUserAction } from '../actions/userActions';
 
 function Copyright() {
   return (
@@ -93,6 +94,7 @@ export default function Form(props) {
     try {
       const loginResponse = await fetchDataGeneral(endpoint, method, loginData);
       window.localStorage.token = loginResponse.token;
+      window.localStorage.userName = loginResponse.username;
       setPassword('');
       setUsername('');
       history.push('/main');
