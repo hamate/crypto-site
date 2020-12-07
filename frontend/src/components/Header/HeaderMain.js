@@ -18,7 +18,7 @@ function HeaderMain({ isLoggedIn }) {
 }
 
 HeaderMain.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.bool,
 };
 
 export default HeaderMain;

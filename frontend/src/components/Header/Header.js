@@ -1,12 +1,20 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import HeaderMain from './HeaderMain';
 import './Header.css';
+import { logoutAction } from '../../actions/sessionAction';
 
 function Header({ isLoggedIn, loggingOut }) {
+  const dispatch = useDispatch();
+
+  function loggingOut() {
+    dispatch(logoutAction());
+    localStorage.removeItem('token');
+  }
+
   const loggedInLinks = [
-    { text: 'Settings', path: '/settings' },
     { text: 'Logout', path: '/login' },
   ];
   const loggedOutLinks = [
@@ -48,8 +56,8 @@ function Header({ isLoggedIn, loggingOut }) {
 }
 
 Header.propTypes = {
-  loggingOut: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired,
+  loggingOut: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
 };
 
 export default Header;
