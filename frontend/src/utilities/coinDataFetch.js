@@ -16,8 +16,7 @@ const coinDataFetch = async (endpoint, params, method, data = undefined) => {
   if (fetchedData.status !== 200) {
     throw new Error(jsonData.message);
   }
-  console.log(jsonData);
-
+  
   return jsonData;
 };
 
