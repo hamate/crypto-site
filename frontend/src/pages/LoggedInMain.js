@@ -12,9 +12,7 @@ function LoggedInMain() {
     <div >
     <Header />
       <div className="main-container">
-        This is the main-container
         <div className="content-container">
-          This is the content-container
           <CoinSummary />
           <Switch>
             <Route exact path={'/coins/details'} component={CoinSummary} />

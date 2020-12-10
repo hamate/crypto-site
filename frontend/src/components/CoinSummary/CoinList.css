@@ -1,0 +1,32 @@
+.content-container {
+  padding: 40px;
+}
+
+.coinlist-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.coinlist {
+  width: 400px;
+  margin: auto;
+}
+
+.coinlist-item {
+  display: flex;
+  margin-bottom: 10px;
+  list-style-type: none;
+  justify-content: space-between;
+  align-content: center;
+  line-height: 60px;
+  height: 60px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+}
+
+.coinlist-image {
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+}

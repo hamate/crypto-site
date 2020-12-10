@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import coinDataFetch from '../../utilities/coinDataFetch';
 import { setWatchListAsyncAction } from '../../actions/watchListAction';
 import Coin from './Coin';
+import './CoinList.css';
 
 function CoinList() {
   const [coins, setCoins] = useState(['bitcoin', 'ethereum', 'ripple']);
@@ -12,19 +12,22 @@ function CoinList() {
   useEffect(() => {
     dispatch(setWatchListAsyncAction(coins.join(',')));
   }, []);
-  console.log(coinsResult);
+  
+  const renderCoins = () => {
+    return (coinsResult !== undefined ? (
+      <ul className="coinlist">
+        {coinsResult.map((coin) => (
+          <Coin key={coin.id} coin={coin} />
+        ))}
+      </ul>
+    ) : (
+      <p>Loading...</p>
+    ))
+  }
 
   return (
     <div className="coin-list container">
-      {coinsResult !== undefined ? (
-        <ul className="coinlist">
-          {coinsResult.map((coin) => (
-            <Coin key={coin.id} />
-          ))}
-        </ul>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {renderCoins()}
     </div>
   );
 }
