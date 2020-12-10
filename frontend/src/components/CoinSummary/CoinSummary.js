@@ -6,7 +6,7 @@ function CoinSummary() {
 
 
   return (
-    <div>
+    <div className="coinsummary-container">
       <AddCoin />
       <CoinList />
     </div>
