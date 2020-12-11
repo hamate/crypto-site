@@ -19,14 +19,14 @@ import {
   loginSuccessAction,
 } from '../actions/sessionAction';
 import { setLoginError } from '../actions/errorActions';
-import { setUserAction } from '../actions/userActions';
+import { setUserAction, setUserAsyncAction } from '../actions/userActions';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href={`${process.env.REACT_APP_FRONTEND}/login`}>
-        Your Website
+        crypto-site
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
@@ -95,6 +95,7 @@ export default function Form(props) {
       const loginResponse = await fetchDataGeneral(endpoint, method, loginData);
       window.localStorage.token = loginResponse.token;
       window.localStorage.userName = loginResponse.username;
+      dispatch(setUserAction({userName: loginResponse.username}));
       setPassword('');
       setUsername('');
       history.push('/main');
