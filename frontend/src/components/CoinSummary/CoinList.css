@@ -8,6 +8,13 @@
   align-content: center;
 }
 
+.coinsummary-title {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 .coinlist {
   width: 400px;
   margin: auto;
@@ -15,32 +22,62 @@
 }
 
 .coinlist-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 14% 27% 23% 28% 8%;
   margin-bottom: 10px;
   list-style-type: none;
-  justify-content: space-between;
-  align-content: center;
-  line-height: 60px;
+  justify-items: center;
+  align-items: center;
   height: 60px;
   background-color: rgb(235, 235, 235);
-  border-radius: 10px;
+  border-radius: 10px !important;
+  padding-right: 5px;
+}
+
+.coinlist-item > * {
+  justify-self: left;
 }
 
 .coinlist-image {
   height: 40px;
-  margin-top: 10px;
-  margin-left: 10px;
 }
 
-.coinlist-name {
-  margin-left: 10px;
-  line-height: 60px;
+.coinlist-price {
+  justify-self: right;
 }
 
-.coinsummary-container {
+.coinlist-percent {
+  justify-self: right;
+  padding-right: 5px;
+}
+
+.coinsummary-table {
   background-color: rgb(58, 58, 58);
   padding: 20px;
   width: 500px;
   margin: auto;
   border-radius: 10px;
+}
+
+.coin-links {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.dropdown {
+  display: flex;
+  margin-bottom: 8px;
+  padding: 0 30px;
+}
+
+.delete-icon {
+  display: none;
+  margin: auto;
+  color: red;
+}
+
+.coinlist-item:hover .delete-icon {
+  display: block;
 }

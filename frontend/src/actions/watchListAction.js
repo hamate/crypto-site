@@ -1,11 +1,21 @@
 import coinDataFetch from '../utilities/coinDataFetch';
 
-export const setWatchListAction = (watchListData) => ({
+export const setWatchListAction = (watchList) => ({
   type: 'SET_WATCHLIST',
-  payload: watchListData,
+  payload: watchList,
 });
 
-export function setWatchListAsyncAction(coinId) {
+export const removeFromWatchListAction = (watchList) => ({
+  type: 'REMOVE_FROM_WATCHLIST',
+  payload: watchList,
+});
+
+export const setCoinsDataAction = (coinsData) => ({
+  type: 'SET_COINS_DATA',
+  payload: coinsData,
+});
+
+export function setCoinDataAsyncAction(coinId) {
   return async (dispatch) => {
     try {
       const coinFetchResult = await coinDataFetch(
@@ -15,7 +25,7 @@ export function setWatchListAsyncAction(coinId) {
             ids: coinId,
           })
       );
-      return dispatch(setWatchListAction(coinFetchResult));
+      return dispatch(setCoinsDataAction(coinFetchResult));
     } catch {
       // return dispatch(setCoinFetchError('Can\'t load coins. Please refresh the page!'));
     }
