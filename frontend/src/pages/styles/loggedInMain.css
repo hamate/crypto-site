@@ -1,4 +1,16 @@
+
 body {
   background-color: grey;
   font-family: 'Open Sans', sans-serif;
+}
+
+.main-frontpage {
+  display: grid;
+  grid-template-columns: 15% 60% 25%;
+}
+
+.main-side {
+  height: 800px;
+  padding: 40px 10px;
+  background-color: rgb(58, 58, 58);
 }
