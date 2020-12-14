@@ -27,7 +27,7 @@ function CoinNews() {
     <div>
       {newsData.length > 0 ? (
         newsData.splice(0, itemsToShow).map((news) => (
-          <div className="news-card">
+          <div key={news._id} className="news-card">
             <NewsCards key={news._id} newsData={news} />
           </div>
         ))

@@ -24,10 +24,9 @@ const useStyles = makeStyles({
 });
 
 function NewsCards({ newsData }) {
-  
-  console.log(newsData);
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+
   return (
     <div>
       {' '}
@@ -38,7 +37,7 @@ function NewsCards({ newsData }) {
             color="textSecondary"
             gutterBottom
           >
-            Word of the Day
+            {newsData.title}
           </Typography>
           <Typography variant="h5" component="h2">
             be{bull}nev{bull}o{bull}lent
