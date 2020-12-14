@@ -23,7 +23,9 @@ const useStyles = makeStyles({
   },
 });
 
-function NewsCards() {
+function NewsCards({ newsData }) {
+  
+  console.log(newsData);
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   return (

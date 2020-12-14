@@ -25,16 +25,15 @@ function CoinNews() {
 
   return (
     <div>
-      <div className="news-cards">
-        {newsData.length > 0 ? (
-          newsData.splice(0, itemsToShow).forEach((news) => (
-            <NewsCards key={news._id} />
-            
-          ))
-        ) : (
-          <span>Loading...</span>
-        )}
-      </div>
+      {newsData.length > 0 ? (
+        newsData.splice(0, itemsToShow).map((news) => (
+          <div className="news-card">
+            <NewsCards key={news._id} newsData={news} />
+          </div>
+        ))
+      ) : (
+        <span>Loading...</span>
+      )}
       <button
         className="btn btn-primary show-more"
         type="button"
